@@ -19,6 +19,39 @@ class _HomeState extends State<Home> {
   Text colors = Text('');
   Text moeda = Text('RS');
 
+  Text name2 = Text('');
+  Text price2 = Text('');
+  Text oldPrice2 = Text('');
+  Text rate2 = Text('');
+  Text reviews2 = Text('');
+  Text freeShipping2 = Text('');
+  Text discount2 = Text('');
+  Text id2 = Text('');
+  Text colors2 = Text('');
+  Text moeda2 = Text('RS');
+
+  Text name3 = Text('');
+  Text price3 = Text('');
+  Text oldPrice3 = Text('');
+  Text rate3 = Text('');
+  Text reviews3 = Text('');
+  Text freeShipping3 = Text('');
+  Text discount3 = Text('');
+  Text id3 = Text('');
+  Text colors3 = Text('');
+  Text moeda3 = Text('RS');
+
+  Text name4 = Text('');
+  Text price4 = Text('');
+  Text oldPrice4 = Text('');
+  Text rate4 = Text('');
+  Text reviews4 = Text('');
+  Text freeShipping4 = Text('');
+  Text discount4 = Text('');
+  Text id4 = Text('');
+  Text colors4 = Text('');
+  Text moeda4 = Text('');
+
   _apiPromotions() async {
     var url = Uri.parse('http://localhost:3000/promotions');
     http.Response response;
@@ -27,51 +60,88 @@ class _HomeState extends State<Home> {
     List<dynamic> lista = json.decode(response.body);
 
     setState(() {
-      name = Text(lista.first['name'].toString());
+      name = Text(lista.elementAt(0)['name'].toString());
       //, style: TextStyle(fontWeight: FontWeight.bold));
 
-      price = Text(lista.first['price'].toString(),
+      price = Text(lista.elementAt(0)['price'].toString(),
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18));
 
-      oldPrice = Text(lista.first['oldPrice'].toString(),
+      oldPrice = Text(lista.elementAt(0)['oldPrice'].toString(),
           style: TextStyle(fontSize: 12));
 
-      rate = Text(lista.first['oldPrice'].toString());
+      rate = Text(lista.elementAt(0)['oldPrice'].toString());
 
-      reviews = Text(lista.first['reviews'].toString());
+      reviews = Text(lista.elementAt(0)['reviews'].toString());
 
-      freeShipping = Text(lista.first['freeShipping'].toString());
+      freeShipping = Text(lista.elementAt(0)['freeShipping'].toString());
 
-      discount = Text(lista.first['discount'].toString());
+      discount = Text(lista.elementAt(0)['discount'].toString());
 
-      id = Text(lista.first['id'].toString());
+      id = Text(lista.elementAt(0)['id'].toString());
 
-      colors = Text(lista.first['colors'].toString());
+      colors = Text(lista.elementAt(0)['colors'].toString());
+
+      name2 = Text(lista.elementAt(1)['name'].toString());
+      //, style: TextStyle(fontWeight: FontWeight.bold));
+
+      price2 = Text(lista.elementAt(1)['price'].toString(),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18));
+
+      oldPrice2 = Text(lista.elementAt(1)['oldPrice'].toString(),
+          style: TextStyle(fontSize: 12));
+
+      rate2 = Text(lista.elementAt(1)['oldPrice'].toString());
+
+      reviews2 = Text(lista.elementAt(1)['reviews'].toString());
+
+      freeShipping2 = Text(lista.elementAt(1)['freeShipping'].toString());
+
+      discount2 = Text(lista.elementAt(1)['discount'].toString());
+
+      id2 = Text(lista.elementAt(1)['id'].toString());
+
+      colors2 = Text(lista.elementAt(1)['colors'].toString());
+      name3 = Text(lista.elementAt(2)['name'].toString());
+      //, style: TextStyle(fontWeight: FontWeight.bold));
+
+      price3 = Text(lista.elementAt(2)['price'].toString(),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18));
+
+      oldPrice3 = Text(lista.elementAt(2)['oldPrice'].toString(),
+          style: TextStyle(fontSize: 12));
+
+      rate3 = Text(lista.elementAt(2)['oldPrice'].toString());
+
+      reviews3 = Text(lista.elementAt(2)['reviews'].toString());
+
+      freeShipping3 = Text(lista.elementAt(2)['freeShipping'].toString());
+
+      discount3 = Text(lista.elementAt(2)['discount'].toString());
+
+      id3 = Text(lista.elementAt(2)['id'].toString());
+
+      colors3 = Text(lista.elementAt(2)['colors'].toString());
+      name4 = Text(lista.elementAt(3)['name'].toString());
+      //, style: TextStyle(fontWeight: FontWeight.bold));
+
+      price4 = Text(lista.elementAt(3)['price'].toString(),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18));
+
+      oldPrice4 = Text(lista.elementAt(3)['oldPrice'].toString(),
+          style: TextStyle(fontSize: 12));
+
+      rate4 = Text(lista.elementAt(3)['oldPrice'].toString());
+
+      reviews4 = Text(lista.elementAt(3)['reviews'].toString());
+
+      freeShipping4 = Text(lista.elementAt(3)['freeShipping'].toString());
+
+      discount4 = Text(lista.elementAt(3)['discount'].toString());
+
+      id4 = Text(lista.elementAt(3)['id'].toString());
+
+      colors = Text(lista.elementAt(3)['colors'].toString());
     });
-
-    // lista.forEach((promotion) => {print(promotion)});
-
-    /*for (var promotion; promotion < retorno.length; promotion++) {
-      print(retorno[promotion]);
-    }
-
-     String name = retorno['name'];
-    String image = retorno['image'];
-    String price = retorno['price'];
-    String oldPrice = retorno['oldPrice'];
-    String rate = retorno['rate'];
-    String reviews = retorno['reviews'];
-    String freeShipping = retorno['freeShipping'];
-    String discount = retorno['discount'];
-    String id = retorno['id'];
-    String colors = retorno['colors'];
-
-    setState(() {
-      _resultado =
-          "${name}, ${image}, ${price}, ${oldPrice}, ${rate}, ${reviews}, ${freeShipping}, ${discount}, ${id}, ${colors}";
-    });*/
-
-    // print(retorno[0]);
   }
 
   @override
@@ -90,10 +160,16 @@ class _HomeState extends State<Home> {
               Card(
                 child: Column(
                   children: [
-                    TextFormField(
-                      decoration: InputDecoration(
-                          border: OutlineInputBorder(),
-                          prefixIcon: Icon(Icons.search)),
+                    Container(
+                        height: 35, color: Color.fromARGB(255, 228, 64, 64)),
+                    Container(
+                      width: 450,
+                      height: 35,
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                            border: OutlineInputBorder(),
+                            prefixIcon: Icon(Icons.search)),
+                      ),
                     ),
                   ],
                 ),
@@ -135,7 +211,8 @@ class _HomeState extends State<Home> {
                       Container(
                         width: 180,
                         height: 220,
-                        child: Image.asset('assets/images/asics.jpg'),
+                        child: Image.network(
+                            'https://imgcentauro-a.akamaihd.net/250x250/9469584WA1/tenis-asics-gel-dedicate-6-masculino-img.jpg'),
                       ),
                       Container(
                         width: 180,
@@ -151,6 +228,7 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ),
+                      //item 1
                       Container(
                         child: name,
                       ),
@@ -229,6 +307,7 @@ class _HomeState extends State<Home> {
                       ),
                     ]),
                   ),
+                  //item2
                   Container(
                     width: 180,
                     height: 420,
@@ -253,19 +332,19 @@ class _HomeState extends State<Home> {
                         ),
                       ),
                       Container(
-                        child: name,
+                        child: name2,
                       ),
                       Row(
                         children: [
                           Container(
                             width: 100,
                             height: 30,
-                            child: price,
+                            child: price2,
                           ),
                           Container(
                             width: 80,
                             height: 30,
-                            child: oldPrice,
+                            child: oldPrice2,
                           ),
                         ],
                       ),
@@ -359,20 +438,21 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ),
+                      //item3
                       Container(
-                        child: name,
+                        child: name3,
                       ),
                       Row(
                         children: [
                           Container(
                             width: 100,
                             height: 30,
-                            child: price,
+                            child: price3,
                           ),
                           Container(
                             width: 80,
                             height: 30,
-                            child: oldPrice,
+                            child: oldPrice3,
                           ),
                         ],
                       ),
@@ -460,20 +540,22 @@ class _HomeState extends State<Home> {
                           ),
                         ),
                       ),
+
+                      //item 4
                       Container(
-                        child: name,
+                        child: name4,
                       ),
                       Row(
                         children: [
                           Container(
                             width: 100,
                             height: 30,
-                            child: price,
+                            child: price4,
                           ),
                           Container(
                             width: 80,
                             height: 30,
-                            child: oldPrice,
+                            child: oldPrice4,
                           ),
                         ],
                       ),
